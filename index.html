@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="site-wrap">
+        <div class="site-item header-container">
+            <div class="header-heading header-item">Weather App</div>
+            <div class="header-text header-item">
+                A simple app that displays the currect temperature and<br>
+                a 3-day weather forecast for 4 cities in Greece
+            </div>
+        </div>
+
+        <div class="site-item content-container">
+            <div class="map-buttons-area content-item">
+                <img src="greece-map.jpg" alt="Map of Greece">
+                <div class="btn-label">Click on a button below to display the<br>current weather conditions for that city<br>
+                    and a 3-day weather forecast</div>
+                <button class="athens-btn btn">Athens</button>
+                <button class="thessaloniki-btn btn">Thessaloniki</button>
+                <button class="kavala-btn btn">Kavala</button>
+                <button class="corfu-btn btn">Corfu</button>
+            </div>
+            <div class="temperature-area content-item">
+                <div class="conditions city">${CITY}</div>
+                <div class="conditions">
+                    <canvas class="current-icon" width="120" height="120"></canvas>
+                    <div class="current-summary">${CURRENT SUMMARY}</div>
+                </div>
+                <div>
+                    <div class="current-label">At the moment:</div>
+                    <div class="current-temperature">${CURRENT TEMPERATURE}</div>
+                    <!-- <div class="current-humidity">${CURRENT HUMIDITY}</div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="site-item forecast">
+            <div class="forecast-item forecast-heading">${CITY} 3-day forecast</div>
+            <div class="forecast-item forecast-days">
+                <div class="day today">
+                    <div class="today-date">DAY 1</div>
+                    <canvas class="today-icon" width="80" height="80"></canvas>
+                    <div class="today-summary">${today summary}</div>
+                    <div class="today-max-temp">${today max temp}</div>
+                    <div class="today-min-temp">${today min temp}</div>
+                    <div class="today-humidity">${today humidity}</div>
+                </div>
+                <div class="day tomorrow">
+                    <div class="tomorrow-date">DAY 2</div>
+                    <canvas class="tomorrow-icon" width="80" height="80"></canvas>
+                    <div class="tomorrow-summary">${tomorrow summary}</div>
+                    <div class="tomorrow-max-temp">${tomorrow max temp}</div>
+                    <div class="tomorrow-min-temp">${tomorrow min temp}</div>
+                    <div class="tomorrow-humidity">${tomorrow humidity}</div>
+                </div>
+                <div class="day day-after-tomorrow">
+                    <div class="day-after-tomorrow-date">DAY 3</div>
+                    <canvas class="day-after-tomorrow-icon" width="80" height="80"></canvas>
+                    <div class="day-after-tomorrow-summary">${day after tomorrow summary}</div>
+                    <div class="day-after-tomorrow-max-temp">${day after tomorrow max temp}</div>
+                    <div class="day-after-tomorrow-min-temp">${day after tomorrow min temp}</div>
+                    <div class="day-after-tomorrow-humidity">${day after tomorrow humidity}</div>
+                </div>
+            </div>
+            <div class="forecast-item after"></div>
+        </div>
+
+        <div class="site-item footer">
+            Build with &hearts; by Michalis Merkouris
+        </div>
+    </div>
+
+    <script src="skycons.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
